@@ -1,0 +1,19 @@
+
+
+<h1 style="color:blueviolet" class="text-center">{{name}}</h1>
+
+<button type="submit"(click)="Mystudentinfo()" class="btn btn-primary">submit</button>
+
+<table border='3' style="color: aqua"> 
+    <tr  *ngIf="student" >
+        <th>name</th>
+        <th>comp</th>
+    </tr>
+    <tr *ngFor='let s of student'>
+        <td>{{s.name}}</td>
+        <td>{{s.comp}}</td>
+
+    </tr>
+
+
+</table>

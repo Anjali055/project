@@ -1,0 +1,67 @@
+<h1 class='mycolor'>{{title}}</h1>
+<h1 [ngStyle]="mystyle">{{title}}</h1>
+<h1 [ngStyle]="mybackground">{{title}}</h1>
+
+<button type="submit" class="btn btn-primary"(click)="handelClick()">hit</button>
+
+
+
+<h1 class="text-center" [ngStyle]="mystyle">hidding the content using [hidden]</h1>
+<h1 [hidden]="isHide"[ngStyle]="mystyle">{{title}}</h1>
+<button type="submit" (click)="toggle()">toggle</button>
+
+<hr>
+<hr><hr>
+
+<h1> structural directive demo</h1>
+    <div *ngIf="isHidden">
+       <h3> I am structural directive i.e *ngIf</h3>
+    </div>
+
+    <button type="submit"(click)="toggle2()">toggle me</button>
+
+
+<ol *ngFor='let n of  name'>
+    <li>{{n}}</li>
+</ol>
+
+using unorder list
+<ul *ngFor="let s of name"> 
+    <li>{{s}}</li>
+    
+
+</ul>
+
+
+
+------------------------using 2d array---------------------
+<ol *ngFor='let s of studenInfo'>
+    <li >{{s.name}}</li>
+    <li >{{s.Rollno}}</li>
+    <li >{{s.std}}</li>
+</ol>
+<button type="submit" class="btn btn-success">click</button>
+
+
+
+<div class="row">
+    
+
+    <label for="name" class="col-sm-1">Firstname</label>
+    <input type ="text"class="form-control col-sm-3" id="name">
+
+</div> 
+
+<div class="row">
+
+        <label for="name" class="col-sm-3">Firstname</label>
+        <input type ="text"class="form-control col-sm-3" id="name">
+    
+    </div> 
+
+
+  <h1>uisng pipes</h1>
+  <div class=" container jumbotron">
+    <h2> the cube of {{num}} is {{num|cube}}</h2>
+
+  </div>  

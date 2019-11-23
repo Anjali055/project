@@ -1,0 +1,42 @@
+<h1 class='text-center text-danger'>template driven form</h1>
+{{userinfo.value|json}}
+
+<div class="container jumbotron">
+    <form #userinfo="ngForm">
+        
+           
+        <div class="form-group">
+            <label for="uname">User name:</label>
+            <input type="text" #uname="ngModel"  class="form-control col-md-6" name="userName:" id="uname"[(ngModel)]="aa" required> 
+        </div>
+
+        <!------------for validation----------------->
+
+        <div class="alert alert-danger col-md-4"[hidden]="uname.valid" >
+            field cannot be empty
+        </div>
+       
+
+        <div class="form-group">
+            <label for="upass">password:</label>
+            <input type="password" #vpass="ngModel" class="form-control col-md-6" name="password" id="upass" ngModel required > 
+        </div>
+
+        <!----------------validation---------------->
+
+        <div class="alert alert-danger col-md-4"[hidden]="vpass.valid">
+            Password cannot be empty
+        </div>
+
+        <div class="row">
+        <div class="col-md-2"></div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"(click)="logindata(userinfo.value)" >click</button>&nbsp;
+                <button type="reset" class="btn btn-info ">reset</button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

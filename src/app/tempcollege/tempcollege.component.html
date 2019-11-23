@@ -1,0 +1,88 @@
+<div class="container jumbotron">
+
+{{userinfo.value|json}}
+<form #userinfo="ngForm">
+    <div class=row>
+        <div class="form-group col-sm-6">
+            <label for="uname">Firstname</label>
+            <input type="text" class="form-control"  id="uname" #vlname="ngModel"  name="uname" required [(ngModel)]="aa" >
+        </div>      
+    </div>
+    <div class="alert alert-danger col-md-4" [hidden]="vlname.valid" >
+            please provide this field..!
+        </div>
+
+   
+
+    
+
+   
+
+
+    <div class=row>
+            <div class="form-group col-sm-6">
+                <label for="lname">lastName</label>
+                <input type="text" class="form-control"  #vlname="ngModel" id="lname"name="lastname" required [(ngModel)]="bb" >
+            </div>
+        </div>
+
+    <div class="alert alert-danger col-md-4" [hidden]="vlname.valid" >
+        please provide this field..!
+    </div>
+
+
+        <div class=row>
+                <div class="form-group col-sm-6">
+                    <label for="pass">password</label>
+                    <input type="password" class="form-control" #vpass="ngModel" required     id="pass" name="password"  [(ngModel)]="cc" pattern="^([a-zA-Z.\s']{1,50})$" >
+                </div>
+               
+        </div>
+        <!----validation of password-->
+        <div class="alert alert-danger col-md-4"[hidden]="vpass.valid">
+                Password cannot be empty
+        </div>
+
+
+
+        
+        <div class=row>
+                <div class="form-group col-sm-6">
+                    <label for="pass"> confirm password</label>
+                    <input type="password" class="form-control" #vcpass="ngModel" required     id="pass" name="password"  [(ngModel)]="cdc" pattern="^([a-zA-Z.\s']{1,50})$" 
+                     minlength="4">
+                </div>
+               
+        </div>
+        <!----validation of  confirm password-->
+        <div class="alert alert-danger" *ngIf="vcpass.invalid &&(vcpass.dirty||vcpass.touched)">
+            ssssssssssssssss
+        </div>
+        <div class="alert alert-danger col-md-4" *ngIf="vcpass.errors.required">
+            name is requried
+        </div>
+        <div class="alert alert-danger" *ngIf="vcpass.errors.minlength">
+                length should be 4 charcter long
+            </div>
+        
+    
+            <div class=row>
+                    <div class="form-group col-sm-6">
+                        <label for="email">Email</label>
+                        <input type="password" class="form-control" #vemail="ngModel" required id="email" name="Email" [(ngModel)]="dd"
+                         pattern="^([a-zA-Z.\s']{1,50})$">
+                    </div>
+                </div>
+             <!----validation of  email-->
+        <div class="alert alert-danger col-md-4"[hidden]="vemail.valid">
+                email cannot be empty...
+        </div>
+
+
+            <button type="submit" name="login" class="btn btn-primary" (click)="submitInfo(userinfo.value)">login</button>&nbsp;&nbsp;
+
+            <button type="reset" name="login" class="btn btn-info">reset</button>
+</form>
+
+</div>
+

@@ -1,0 +1,111 @@
+<h1 class="text-center text-danger">PractTemplate driven</h1>
+
+{{myLoginDemo.value|json}}
+<div class="container jumbotron">
+<form [formGroup]="myLoginDemo">
+    <div class="form-group">
+        <label for="uname">Name:</label>
+        <input  type="text" id="uname" class="form-control" formControlName="name">
+    </div>
+
+    <!--validation-->
+    <div class="alert alert-danger col-sm-4" *ngIf="myLoginDemo.controls['name'].hasError('required')">
+        Name is requried
+    </div>
+
+    <!---------validation-->
+    <div class="alert alert-warning col-sm-4" *ngIf="myLoginDemo.controls['name'].hasError('minlength')">
+            minimum length is 4 character
+        </div>
+
+
+    <div class="form-group">
+            <label for="unames">Email:</label>
+            <input  type="email" id="lname" class="form-control"formControlName="email">
+    </div>
+
+<div class="alert alert-danger col-sm-4" *ngIf="myLoginDemo.controls['email'].hasError('required')">
+    Email is requried
+</div>
+ 
+
+
+<div formGroupName="address">
+
+      <!--- grouping of the content-------------> 
+<div class="form-group">
+        <label class="text-danger">Address:</label>
+    </div>
+
+
+
+        <div class="form-group">
+                <label for="ustreet">Street:</label>
+                <input  type="text" id="Ustreet" class="form-control" formControlName="Street">
+        </div>
+
+        <div class="alert alert-danger col-sm-4" *ngIf="myLoginDemo.get('address').get('Street').hasError('required') &&myLoginDemo.get('address').get('Street').touched">
+    Street name   is requried
+</div> 
+
+        <div class="form-group">
+                <label for="city">city:</label>
+                <input  type="text" id="city" class="form-control" formControlName="city">
+        </div>
+
+        <div class="form-group">
+                <label for="postalCode">postal code:</label>
+                <input  type="text" id="postalCode" class="form-control" formControlName="postalCode">
+        </div>
+
+
+
+</div>
+
+
+
+<!---------skill class----------------------->
+<div fromGroupName="Skills">
+
+<label class="text-danger   ">Skills:</label>
+
+    <div class="form-group ">
+            <label for="uSkillname">Skill name::</label>
+            <input  type="text" id="uSkillname" class="form-control" formControlName="Skillname">
+    </div>
+
+    <div class="form-group ">
+            <label for="uexperience">Experiece:</label>
+            <input  type="text" id="uexperience" class="form-control" formControlName="experience">
+    </div>
+
+    <div class="form-group ">
+        <label class="radio-inline col-md-2">
+        <input type="radio" value="begginers"   name="optradio" formControlName="proficiency">begginers
+    </label>
+
+    <label class="radio-inline col-md-2">
+        <input type="radio" value="intermidiate" name="optradio" formControlName="proficiency">intermidiate
+    </label>
+
+    <label class="radio-inline col-md-2">
+        <input type="radio" value="intermidiate" name="optradio" formControlName="proficiency">proficiency
+    </label>
+    </div>
+
+    
+
+
+</div>
+
+
+
+
+<!-------------------------------------------------------------------------------------->
+<div class="btn-toolbar">
+<button type="submit" class="btn btn-primary" style="margin-right: 30px" (click)="mysubmit(myLoginDemo.value)">Submit</button>
+<button type="reset" class="btn btn-success">reset</button>
+</div>
+</form>
+
+</div>

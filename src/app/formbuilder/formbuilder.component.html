@@ -1,0 +1,62 @@
+
+{{LoginDetails.value|json}}
+<div class ="container jumbotron">
+
+<form [formGroup]="LoginDetails">
+<div class="row">
+    <div class="form-group col-md-6 ">
+        <label for="uname">Name</label>
+        <input type="text" id="uname" class="form-control" formControlName="name">
+
+    </div>
+
+    <div class="form-group  col-md-6">
+            <label for="ulastn"> LastName</label>
+            <input type="text" id="ulastn" class="form-control" formControlName="lastname">
+    
+    </div>
+
+    <div class="form-group  col-md-6">
+            <label for="pass"> password</label>
+            <input type="password" id="pass" class="form-control" formControlName="password">
+    
+    </div>
+
+    <div class="form-group  col-md-6">
+            <label for="cpass"> confirm password</label>
+            <input type="text" id="cpass" class="form-control" formControlName="confirmPassword">
+    
+    </div>
+
+</div>
+
+    <div formGroupName="paddress">
+        <h5 class="text-danger">Address:</h5>
+
+        <div class="form-group  col-md-6">
+                <label for="street"> Street</label>
+                <input type="text" id="street" class="form-control"formControlName="street">
+        
+        </div>
+
+        
+        <div class="form-group  col-md-6">
+                <label for="lane"> Lane</label>
+                <input type="text" id="lane" class="form-control" formControlName="lane1">
+        
+        </div>
+
+        <div class="form-group  col-md-6">
+                <label for="city">city</label>
+                <input type="text" id="city" class="form-control" formControlName="city">
+        
+        </div>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-right: 30px" (click)="mysubmit(myLoginDemo.value)">Submit</button>
+    <button type="reset" class="btn btn-success">reset</button>
+</form>
+
+</div>

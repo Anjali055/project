@@ -1,0 +1,90 @@
+<!----<h1 class="text-center">{{name}}</h1>-->
+<!-- <h1></h1>{{myuser|json}} -->
+
+
+ <!-- <button type="submit" (click)="showHide()">showwwww</button>  -
+ <button type="submit" (click)="[getUsers(),showHide()]">get info</button>
+
+<div *ngIf="show">
+        
+ <table border='3'>
+<tr >
+    <th>id</th>
+    <th>email</th>
+    <th>first_name</th>
+    <th>last_name</th>
+    <th>avatar</th> 
+
+</tr>
+<tr *ngFor="let h of myuser.data ">
+    <td>{{h.id}}</td>
+    <td>{{h.email}}</td>
+    <td>{{h.first_name}}</td>
+    <td>{{h.last_name}}</td>
+    <td><img src="{{h.avatar}}" alt="img not found" width="40" height="40" ></td>
+
+
+
+
+</tr>
+
+
+</table>
+</div>
+-->
+<!----<button type="submit" (click)="getUsers()">get info</button>
+
+<table border='3'>
+    <tr>
+        <th>name</th>
+        <th>capital</th>
+        <th>region</th>
+        <th>callingCodes</th>
+        <th>topLevelDomain</th>
+        <th>altSpellings</th>
+        <th>currencies</th>
+        <th>currencies</th>
+
+    </tr>
+
+    <tr *ngFor="let h of myuser ">
+            <td>{{h.name}}</td>
+            <td>{{h.capital}}</td>
+            <td>{{h.region}}</td>
+            <td>{{h.callingCodes}}</td>
+            <td>{{h.topLevelDomain}}</td>
+            <td>{{h.altSpellings}}</td>
+            <td> code:{{h.currencies[0].code}} ,name:{{h.currencies[0].name}}</td>
+
+            
+            
+    </tr>
+</table>-->
+
+<button type="submit" (click)="postsaveUser()">save info</button>
+<!----<table border='3'>
+        <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>avatar</th>
+           
+    
+        </tr>
+    
+        <tr *ngFor="let  s of myuser ">
+                <td>{{s.id}}</td>
+                <td>{{s.email}}</td>
+                <td>{{s.first_name}}</td>
+                <td>{{s.last_name}}</td>
+                
+    
+                
+                
+        </tr>
+    </table>-->
+
+    <button type="submit" (click)="cputuser()">put data</button>
+   
+    {{myuser|json}}
