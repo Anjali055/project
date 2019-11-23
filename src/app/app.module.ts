@@ -32,9 +32,6 @@ import { PractaboutCOmponent } from 'src/routingDemo/practAbout.component';
 import { PractvisionCOmponent } from 'src/routingDemo/PractVision.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,StudentComponet,cubePipe,PractComponnent,genderPipe, GreetPipe,
